@@ -1,6 +1,5 @@
 import React from "react";
 import { useNetflixContext } from "../context/Context";
-import { FaLanguage } from "react-icons/fa";
 
 const Footer = () => {
   const { footerContent } = useNetflixContext();

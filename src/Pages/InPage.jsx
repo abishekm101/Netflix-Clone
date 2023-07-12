@@ -162,13 +162,13 @@ const InPage = () => {
               type="email"
               placeholder="Email address"
             />
-            <button className="h-12 w-32 m-4 bg-redButton text-center rounded-sm">
+            <button className="h-12 w-32 m-5 bg-redButton text-center rounded-sm">
               Get Started
             </button>
           </form>
         </div>
       </div>
-      <div className="bg-black h-[350px] p-2 py-[50px] px-[160px] gap-2 text-[rgba(255,255,255,0.7)]">
+      <div className="bg-black h-[350px] py-[50px] px-[160px] gap-2 my-2">
         <Footer />
       </div>
     </div>
