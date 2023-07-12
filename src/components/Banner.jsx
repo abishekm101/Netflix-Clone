@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Requests from "../Requests";
+import Requests from "./Requests";
 import axios from "../axios";
 
 // const baseUrl = "http://image.tmdb.org/t/p/original";
