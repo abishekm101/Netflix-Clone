@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Requests from "./Requests";
-import axios from "../axios";
+import instance from "../axios/axios";
 
 // const baseUrl = "http://image.tmdb.org/t/p/original";
 export const Banner = () => {
   const [movie, setMovie] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(`${Requests.fetchNetflixOriginals}`);
+      const response = await instance.get(`${Requests.fetchNetflixOriginals}`);
       setMovie(
         response.data.results[
           Math.floor(Math.random() * response.data.results.length + 1)

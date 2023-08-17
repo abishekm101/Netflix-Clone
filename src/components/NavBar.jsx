@@ -24,12 +24,18 @@ const NavBar = () => {
             <NavLink>Home</NavLink>
           </h1>
           <h1>
-            <NavLink to="Account">My Favourite</NavLink>
+            <NavLink to="/Account">My Favourite</NavLink>
+          </h1>
+          <h1>
+            <NavLink to="/Search">Search</NavLink>
           </h1>
         </div>
         <div className="flex gap-6 text-white">
-          <button onClick={()=>Navigate("Account")}>Account</button>
-          <button onClick={HandleLogOut} className="h-8 flex justify-center items-center bg-redButton w-20  rounded-sm">
+          <button>Account</button>
+          <button
+            onClick={HandleLogOut}
+            className="h-8 flex justify-center items-center bg-redButton w-20  rounded-sm"
+          >
             LogOut
           </button>
         </div>

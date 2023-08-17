@@ -28,7 +28,7 @@ const FavMovies = ({ isLargeRow }) => {
     <>
       <div className="h-full flex flex-col">
         <h1 className="text-white font-bold text-3xl p-6">My Favourites</h1>
-        <div className="flex overflow-x-auto">
+        <div className="grid grid-cols-5 gap-3">
           {movies?.map((movie) => (
             <div key={movie.id} className="relative flex-shrink-0">
               <img
@@ -38,7 +38,7 @@ const FavMovies = ({ isLargeRow }) => {
                 }`}
                 alt={movie.name || movie.title}
               />
-              <div className="text-white absolute top-0 left-0 w-full h-full opacity-0 hover:bg-black/50 hover:opacity-100 flex flex-wrap justify-center items-center">
+              <div className="text-white absolute top-0 left-0 w-[250px] h-full opacity-0 hover:bg-black/50 hover:opacity-100 flex flex-wrap justify-center items-center">
                 <p>{movie.title || movie.name}</p>
 
                 <IoMdHeart

@@ -10,7 +10,6 @@ module.exports = {
       wide: ".025em",
       wider: ".05em",
       widest: ".1em",
-      widest: ".25em",
     },
     extend: {
       backgroundImage: {

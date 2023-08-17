@@ -1,6 +1,13 @@
 import React from "react";
 
-const InPageContent = ({ title, titleContent, tImg, flexDirection }) => {
+const InPageContent = ({
+  title,
+  titleContent,
+  tImg,
+  flexDirection,
+  video1,
+  video2,
+}) => {
   return (
     <div className="">
       <div
@@ -10,7 +17,18 @@ const InPageContent = ({ title, titleContent, tImg, flexDirection }) => {
           <div className="text-5xl font-extrabold m-5">{title}</div>
           <div className="m-5">{titleContent}</div>
         </div>
-        <img className="h-80" src={tImg} alt="" />
+        <div className="">
+          <div className="">
+            {/* {video1 ? (
+              <video className="absolute h-48 right-48 w-80" controls loop autoPlay mute>
+                <source src={video1} type="video/mp4" />
+              </video>
+            ) : (
+              ""
+            )} */}
+          </div>
+          <img className="h-80" src={tImg} alt="" />
+        </div>
       </div>
     </div>
   );

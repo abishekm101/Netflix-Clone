@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import axios from "../axios";
 import { IoMdHeart, IoMdHeartEmpty } from "react-icons/io";
 import { arrayUnion, doc, onSnapshot, updateDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import { UseAuth } from "../context/AuthContext";
+import instance from "../axios/axios";
 
 const baseUrl = "http://image.tmdb.org/t/p/original";
 const Row = ({ title, fetchUrl, isLargeRow }) => {
@@ -14,7 +14,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
   const docRef = doc(db, "users", `${user?.email}`);
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(`${fetchUrl}`);
+      const response = await instance.get(`${fetchUrl}`);
       setMovies(response.data.results);
     };
     fetchData();

@@ -1,11 +1,13 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
-import InPage from "../Pages/InPage";
-import Layout from "../Pages/Layout";
-import LoginPage from "../Pages/LoginPage";
-import SignUpPage from "../Pages/SignUpPage";
-import Account from "../Pages/Account";
 import ProtectedRoute, { ProtectedRouteUser } from "./ProtectedRoute";
+import Loading from "../Pages/Loading";
+import Search from "../Pages/Search";
+const InPage = lazy(() => import("../Pages/InPage"));
+const Layout = lazy(() => import("../Pages/Layout"));
+const LoginPage = lazy(() => import("../Pages/LoginPage"));
+const SignUpPage = lazy(() => import("../Pages/SignUpPage"));
+const Account = lazy(() => import("../Pages/Account"));
 
 const AppRoutes = () => {
   return (
@@ -13,41 +15,60 @@ const AppRoutes = () => {
       <Route
         path="/"
         element={
-          <ProtectedRouteUser>
-            <InPage />
-          </ProtectedRouteUser>
+          <Suspense fallback={<Loading />}>
+            <ProtectedRouteUser>
+              <InPage />
+            </ProtectedRouteUser>
+          </Suspense>
         }
       />
       <Route
         path="/SignUp"
         element={
-          <ProtectedRouteUser>
-            <SignUpPage />
-          </ProtectedRouteUser>
+          <Suspense fallback={<Loading />}>
+            <ProtectedRouteUser>
+              <SignUpPage />
+            </ProtectedRouteUser>
+          </Suspense>
         }
       />
       <Route
         path="/login"
         element={
-          <ProtectedRouteUser>
-            <LoginPage />
-          </ProtectedRouteUser>
+          <Suspense fallback={<Loading />}>
+            <ProtectedRouteUser>
+              <LoginPage />
+            </ProtectedRouteUser>
+          </Suspense>
         }
       />
       <Route
         path="/Home"
         element={
-          <ProtectedRoute>
-            <Layout />
-          </ProtectedRoute>
+          <Suspense fallback={<Loading />}>
+            <ProtectedRoute>
+              <Layout />
+            </ProtectedRoute>
+          </Suspense>
         }
       />
       <Route
         path="/Account"
         element={
-          <ProtectedRoute>
-            <Account />
-          </ProtectedRoute>
+          <Suspense fallback={<Loading />}>
+            <ProtectedRoute>
+              <Account />
+            </ProtectedRoute>
+          </Suspense>
+        }
+      />
+
+      <Route
+        path="/Search"
+        element={
+          <Suspense fallback={<Loading />}>
+            <Search />
+          </Suspense>
         }
       />
     </Routes>

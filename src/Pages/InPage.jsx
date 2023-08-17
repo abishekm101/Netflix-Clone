@@ -9,7 +9,8 @@ import kidsImg from "../files/kidsImg.png";
 import Faq from "../components/Faq";
 import { useNetflixContext } from "../context/Context";
 import Footer from "../components/Footer";
-// import video from "./files/video-devices-in";
+import video1 from "../files/video-devices-in.m4v";
+import video2 from "../files/video-tv-in-0819.m4v";
 const InPage = () => {
   const Navigate = useNavigate();
   const { setEmail } = useNetflixContext();
@@ -82,7 +83,7 @@ const InPage = () => {
             "Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more."
           }
           tImg={tvImg}
-          // video={video}
+          video1={video1}
         />
         <InPageContent
           title={"Download your shows to watch offline"}
@@ -99,6 +100,7 @@ const InPage = () => {
             "Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV."
           }
           tImg={watchImg}
+          video2={video2}
         />
 
         <InPageContent
